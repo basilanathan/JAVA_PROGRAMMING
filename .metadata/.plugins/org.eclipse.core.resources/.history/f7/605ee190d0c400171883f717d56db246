@@ -112,8 +112,6 @@ public class DoublyLinkedList {
 		System.out.println("-----------------");
 		dll.addRear(20);
 		dll.print();
-		System.out.println("Size: " + dll.size());
-
 		System.out.println("-----------------");
 		//dll.removeFront();
 		//dll.removeRear();

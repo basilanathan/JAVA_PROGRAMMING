@@ -80,7 +80,6 @@ public class DoublyLinkedList {
 			current.previous = newLink;
 			head = newLink;
 		} else {
-			//adding the node to the middle
 			Link newLink = new Link(current.previous, data, current);
 			current.previous.next = newLink;
 			current.previous = newLink;
@@ -112,15 +111,11 @@ public class DoublyLinkedList {
 		System.out.println("-----------------");
 		dll.addRear(20);
 		dll.print();
-		System.out.println("Size: " + dll.size());
-
 		System.out.println("-----------------");
 		//dll.removeFront();
 		//dll.removeRear();
-		dll.insertAt(36, 3);
-		dll.insertAt(45, 1);
+		dll.insertAt(36, 6);
 		dll.print();
-		System.out.println("Size: " + dll.size());
 	}
 
 }

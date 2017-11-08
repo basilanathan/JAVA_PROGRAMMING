@@ -112,15 +112,12 @@ public class DoublyLinkedList {
 		System.out.println("-----------------");
 		dll.addRear(20);
 		dll.print();
-		System.out.println("Size: " + dll.size());
-
 		System.out.println("-----------------");
 		//dll.removeFront();
 		//dll.removeRear();
 		dll.insertAt(36, 3);
 		dll.insertAt(45, 1);
 		dll.print();
-		System.out.println("Size: " + dll.size());
 	}
 
 }
