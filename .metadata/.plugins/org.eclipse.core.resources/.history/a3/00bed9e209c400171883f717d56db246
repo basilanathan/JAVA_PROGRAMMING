@@ -1,0 +1,25 @@
+package pkg4;
+
+public class Node {
+	
+	//private variables
+	private int data;
+	private Node nextNode;
+	
+	public int getData() {
+		return this.data;
+	}
+	
+	public Node getNextNode() {
+		return this.nextNode;
+	}
+	
+	public void setData() {
+		this.data = data;
+	}
+	
+	public void setNextNode() {
+		this.nextNode = nextNode;
+	}
+
+}

@@ -1,0 +1,7 @@
+INDEX VERSION 1.130+/Users/basila/Documents/eclipse-workspace/.metadata/.plugins/org.eclipse.jdt.core
+170425695.index
+666437786.index
+3124604304.index
+3927879410.index
+2898300490.index
+3247560794.index
