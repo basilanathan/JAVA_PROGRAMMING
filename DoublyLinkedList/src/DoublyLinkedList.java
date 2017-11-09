@@ -87,6 +87,7 @@ public class DoublyLinkedList {
 		}
 		size++;
 	}
+	//REMOVE NODE AT INDEX
 	public void removeAt(int index) {
 		if (head == null) return;
 		if (index < 1 || index > size) return;
@@ -97,8 +98,10 @@ public class DoublyLinkedList {
 			current = current.next;
 			i++;
 		}
+		//REMOVE LAST INDEX
 		if (current.next == null) {
 			current.previous.next = null;
+			//REMOVE FIRST INDEX
 		} else if (current.previous == null) {
 			current = current.next;
 			current.previous = null;
@@ -143,8 +146,10 @@ public class DoublyLinkedList {
 		dll.insertAt(45, 1);
 		dll.print();
 		System.out.println("Size: " + dll.size());
+		System.out.println("-----------------");
 		dll.removeAt(1);
 		dll.print();
+		System.out.println("Size: " + dll.size());
 	}
 
 }
