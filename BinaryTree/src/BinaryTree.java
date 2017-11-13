@@ -86,7 +86,71 @@ public class BinaryTree {
 				isItALeftChile = false;
 				focusNode = focusNode.rightChild;
 			}
+			if (focusNode == null) {
+				return false;
+			}
+			//if it doesnt have a left child or a right child. and it equals to root then set root to null
+			if (focusNode.leftChild == null && focusNode.rightChild == null) {
+				if (focusNode == root) {
+					root = null;
+				} else if(isItALeftChile) {
+					parent.leftChild = null;
+				} else {
+					parent.rightChild = null;
+				}
+			}
+			else if(focusNode.rightChild == null) {
+				if (focusNode == root) 
+					root = focusNode.leftChild;
+					
+				else if(isItALeftChile)
+					parent.leftChild = focusNode.leftChild;
+				
+				else parent.rightChild = focusNode.leftChild;
+				
+			}
+			
+			else if(focusNode.leftChild == null) {
+				if (focusNode == root) 
+					root = focusNode.rightChild;
+				else if(isItALeftChile)
+					parent.leftChild = focusNode.rightChild;
+				else
+					parent.rightChild = focusNode.rightChild;
+				
+			}
+			else {
+				Node replacement = getReplacementNode(focusNode);
+				if (focusNode == root) 
+					root = replacement;
+				else if(isItALeftChile)
+					parent.leftChild = replacement;
+				else
+					parent.rightChild = replacement;
+				replacement.leftChild = focusNode.leftChild;
+				
+			}
 		}
+		return true;
+
+	}
+	
+	public Node getReplacementNode(Node replacedNode) {
+		Node replacementParent = replacedNode;
+		Node replacement = replacedNode;
+		
+		Node focusNode = replacedNode.rightChild;
+		
+		while (focusNode != null) {
+			replacementParent = replacement;
+			replacement = focusNode;
+			focusNode = focusNode.leftChild;
+		}
+		if (replacement != replacedNode.rightChild) {
+			replacementParent.leftChild = replacement.rightChild;
+			replacement.rightChild = replacedNode.rightChild;
+		}
+		return replacement;
 	}
 
 	public static void main(String[] args) {
@@ -99,12 +163,16 @@ public class BinaryTree {
 		thTree.addNode(75, "Sales Manager");
 		thTree.addNode(85, "Salesman 1");
 		
-		//thTree.inOrderTraverseTree(thTree.root);
-		//thTree.preorderTraverseTree(thTree.root);
-		thTree.postOrderTraverseTree(thTree.root);
+		System.out.println("REMOVE KEY 25");
+		thTree.remove(25);
 		
-		System.out.println("search for 30");
-		System.out.println(thTree.findNode(30));
+		
+		thTree.inOrderTraverseTree(thTree.root);
+		//thTree.preorderTraverseTree(thTree.root);
+		//thTree.postOrderTraverseTree(thTree.root);
+		
+		//System.out.println("search for 30");
+		//System.out.println(thTree.findNode(30));
 
 	}
 
