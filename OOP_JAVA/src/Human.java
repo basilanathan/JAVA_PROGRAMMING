@@ -6,10 +6,15 @@ public class Human {
 	int height;
 	String eyeColor;
 	
-	public Human() {
-		
+	//this keyword points to the current object
+	public Human(String name, int age, int height, String eyeColor) {
+		super();
+		this.name = name;
+		this.age = age;
+		this.height = height;
+		this.eyeColor = eyeColor;
 	}
-	
+
 	public void speak() {
 		System.out.println("Hello my name is " + name);
 		System.out.println("I am " + age + " years old");
