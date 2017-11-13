@@ -1,2 +1,47 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy/>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="Employee"/>
+<fullyQualifiedTypeName name="org.omg.IOP.TAG_RMI_CUSTOM_MAX_STREAM_FORMAT"/>
+<fullyQualifiedTypeName name="Human"/>
+<fullyQualifiedTypeName name="Animal"/>
+<fullyQualifiedTypeName name="Bird"/>
+<fullyQualifiedTypeName name="Chicken"/>
+<fullyQualifiedTypeName name="Flyable"/>
+<fullyQualifiedTypeName name="Sparrow"/>
+<fullyQualifiedTypeName name="pkg4.LinkedList"/>
+<fullyQualifiedTypeName name="pkg4.Node"/>
+<fullyQualifiedTypeName name="pkg4.DoublyEndedList"/>
+<fullyQualifiedTypeName name="java.lang.StringBuilder"/>
+<fullyQualifiedTypeName name="java.lang.Override"/>
+<fullyQualifiedTypeName name="pkg4.DoublyLinkedList"/>
+<fullyQualifiedTypeName name="pkg4.DoublyLinkedNode"/>
+<fullyQualifiedTypeName name="org.omg.CORBA.PUBLIC_MEMBER"/>
+<fullyQualifiedTypeName name="javax.print.attribute.Size2DSyntax"/>
+<fullyQualifiedTypeName name="DoublyLinkedList"/>
+<fullyQualifiedTypeName name="Link"/>
+<fullyQualifiedTypeName name="Stack"/>
+<fullyQualifiedTypeName name="org.omg.CORBA.PRIVATE_MEMBER"/>
+<fullyQualifiedTypeName name="java.lang.ArrayIndexOutOfBoundsException"/>
+<fullyQualifiedTypeName name="java.util.Arrays"/>
+<fullyQualifiedTypeName name="IntStackArray"/>
+<fullyQualifiedTypeName name="java.util.Stack"/>
+<fullyQualifiedTypeName name="java.lang.Integer"/>
+<fullyQualifiedTypeName name="StackLinkedList.Node"/>
+<fullyQualifiedTypeName name="javax.xml.soap.Node"/>
+<fullyQualifiedTypeName name="StackLinkedList"/>
+<fullyQualifiedTypeName name="QNode"/>
+<fullyQualifiedTypeName name="Queue"/>
+<fullyQualifiedTypeName name="javax.xml.crypto.Data"/>
+<fullyQualifiedTypeName name="QueueUsingLinkedListMain"/>
+<fullyQualifiedTypeName name="QueueUsingLinkedListMain.Node"/>
+<fullyQualifiedTypeName name="QueueLinkedList"/>
+<fullyQualifiedTypeName name="java.lang.Iterable"/>
+<fullyQualifiedTypeName name="java.lang.IncompatibleClassChangeError"/>
+<fullyQualifiedTypeName name="java.sql.Time"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="Solution"/>
+<fullyQualifiedTypeName name="java.lang.InstantiationError"/>
+<fullyQualifiedTypeName name="java.lang.String"/>
+<fullyQualifiedTypeName name="BinaryTree"/>
+<fullyQualifiedTypeName name="Node"/>
+</qualifiedTypeNameHistroy>
