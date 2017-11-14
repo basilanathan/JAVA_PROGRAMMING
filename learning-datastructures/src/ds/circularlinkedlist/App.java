@@ -1,9 +1,13 @@
-package ds.singlylinkedlist;
+package ds.circularlinkedlist;
+
+import ds.singlylinkedlist.SinglyLinkedList;
 
 public class App {
 
 	public static void main(String[] args) {
-		SinglyLinkedList myList = new SinglyLinkedList();
+		// TODO Auto-generated method stub
+		
+		CircularLinkedList myList = new CircularLinkedList();
 		myList.insertFirst(100);
 		myList.insertFirst(50);
 		myList.insertFirst(99);
@@ -12,7 +16,6 @@ public class App {
 		
 		myList.displayList();
 
-				
 	}
 
 }

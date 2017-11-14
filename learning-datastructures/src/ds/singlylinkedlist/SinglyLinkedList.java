@@ -35,5 +35,16 @@ public class SinglyLinkedList {
 		}
 		System.out.println();
 	}
+	
+	//not efficient becuase we are traversing through the entire list.
+	public void insertLast(int data) {
+		Node current = first;
+		while (current.next != null) {
+			current = current.next; //loop unitl current.next is null
+		}
+		Node newNode = new Node();
+		newNode.data = data;
+		current.next = newNode;
+	}
 
 }
