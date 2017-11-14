@@ -1,4 +1,5 @@
-
+//objects are a runtime concept. when we run the application the objects get created.
+//how the objects will react during runtime. 
 public class Zoo {
 
 	public static void main(String[] args) {
@@ -21,3 +22,9 @@ public class Zoo {
 	}
 
 }
+//everything needs to be in methods, they do all the work in a java application
+//main method- strating point of every java application
+//when you hit the run button - two memory locations.
+//-stack = frame is going to be crated (main)
+//-heap = still inside the main method. 
+//instance variable = a varaible that belongs to a instance.
