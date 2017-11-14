@@ -21,8 +21,6 @@ public class App {
 		theList.insertAfter(33, 88);
 		theList.displayForward();
 
-
-
 	}
 
 }

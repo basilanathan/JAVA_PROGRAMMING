@@ -50,6 +50,12 @@
 <fullyQualifiedTypeName name="ds.queue.Queue"/>
 <fullyQualifiedTypeName name="org.omg.PortableServer.POAPackage.NoServant"/>
 <fullyQualifiedTypeName name="linkedlists.Node"/>
-<fullyQualifiedTypeName name="ds.singlylinkedlist.Node"/>
 <fullyQualifiedTypeName name="ds.singlylinkedlist.SinglyLinkedList"/>
+<fullyQualifiedTypeName name="ds.singlylinkedlist.Node"/>
+<fullyQualifiedTypeName name="ds.circularlinkedlist.Node"/>
+<fullyQualifiedTypeName name="ds.circularlinkedlist.CircularLinkedList"/>
+<fullyQualifiedTypeName name="java.lang.Double"/>
+<fullyQualifiedTypeName name="ds.doublylinkedlist.Node"/>
+<fullyQualifiedTypeName name="ds.doublylinkedlist.DoublyLinkedList"/>
+<fullyQualifiedTypeName name="java.lang.NumberFormatException"/>
 </qualifiedTypeNameHistroy>
