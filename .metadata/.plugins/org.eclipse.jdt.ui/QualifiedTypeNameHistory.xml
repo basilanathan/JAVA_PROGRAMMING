@@ -2,7 +2,6 @@
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="Employee"/>
 <fullyQualifiedTypeName name="org.omg.IOP.TAG_RMI_CUSTOM_MAX_STREAM_FORMAT"/>
-<fullyQualifiedTypeName name="Human"/>
 <fullyQualifiedTypeName name="Animal"/>
 <fullyQualifiedTypeName name="Bird"/>
 <fullyQualifiedTypeName name="Chicken"/>
@@ -40,8 +39,17 @@
 <fullyQualifiedTypeName name="java.sql.Time"/>
 <fullyQualifiedTypeName name="java.lang.System"/>
 <fullyQualifiedTypeName name="Solution"/>
-<fullyQualifiedTypeName name="java.lang.InstantiationError"/>
-<fullyQualifiedTypeName name="java.lang.String"/>
 <fullyQualifiedTypeName name="BinaryTree"/>
+<fullyQualifiedTypeName name="javax.xml.bind.ParseConversionEvent"/>
 <fullyQualifiedTypeName name="Node"/>
+<fullyQualifiedTypeName name="java.lang.InstantiationError"/>
+<fullyQualifiedTypeName name="Human"/>
+<fullyQualifiedTypeName name="adt.Counter"/>
+<fullyQualifiedTypeName name="ds.stack.Stack"/>
+<fullyQualifiedTypeName name="java.lang.String"/>
+<fullyQualifiedTypeName name="ds.queue.Queue"/>
+<fullyQualifiedTypeName name="org.omg.PortableServer.POAPackage.NoServant"/>
+<fullyQualifiedTypeName name="linkedlists.Node"/>
+<fullyQualifiedTypeName name="ds.singlylinkedlist.Node"/>
+<fullyQualifiedTypeName name="ds.singlylinkedlist.SinglyLinkedList"/>
 </qualifiedTypeNameHistroy>
