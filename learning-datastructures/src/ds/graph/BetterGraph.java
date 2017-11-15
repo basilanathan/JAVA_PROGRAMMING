@@ -39,7 +39,7 @@ public class BetterGraph {
 	public void addEdge(String srcVertexName, String destVertexName) {
 		int v1idx = indexForName(srcVertexName); //loop through the array and find theindex posiiton of the given name
 		int v2idx = indexForName(destVertexName);
-		arrayOfLists[v1idx].adjList = new Node(v2idx, arrayOfLists[v1idx].adjList);
+		arrayOfLists[v1idx].adjList = new Node(v2idx, arrayOfLists[v1idx].adjList); //assignng to a list of nodes a new node
 		if (unidirected) {
 			arrayOfLists[v2idx].adjList = new Node(v1idx, arrayOfLists[v2idx].adjList);
 		}
