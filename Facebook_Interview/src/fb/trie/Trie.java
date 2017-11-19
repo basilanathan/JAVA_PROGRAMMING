@@ -1,5 +1,7 @@
 package fb.trie;
 
+// * Time : O() ; Space: O()
+
 //Java implementation of search and insert operations
 //on Trie
 public class Trie {
@@ -38,9 +40,11 @@ public class Trie {
    
      for (level = 0; level < length; level++)
      {
+    	 
+    	 //The reason for - 'A', is that it "shifts" the ascii/unicode value so that A - Z have values 0 - 25. And are thus more suitable as an array index.
          index = key.charAt(level) - 'a';
          if (pCrawl.children[index] == null)
-             pCrawl.children[index] = new TrieNode();
+             pCrawl.children[index] = new TrieNode(); // insert a letter and point it to the new trie node
    
          pCrawl = pCrawl.children[index];
      }
@@ -64,7 +68,7 @@ public class Trie {
          if (pCrawl.children[index] == null)
              return false;
    
-         pCrawl = pCrawl.children[index];
+         pCrawl = pCrawl.children[index]; //goes to till the length of the inpu and returns if it reaches endOfWord
      }
    
      return (pCrawl != null && pCrawl.isEndOfWord);

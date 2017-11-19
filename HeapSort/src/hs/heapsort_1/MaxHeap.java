@@ -151,6 +151,7 @@ public class MaxHeap {
     public static void main(String[] args) {
         int[] a = new int[]{2, 4, 5, 1, 6, 7, 8};
         MaxHeap maxHeap = new MaxHeap(a);
+        
         System.out.print("original heap: ");
         maxHeap.printHeap();
         maxHeap.buildMaxHeap();
