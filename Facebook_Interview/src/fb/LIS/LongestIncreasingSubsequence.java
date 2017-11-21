@@ -26,16 +26,16 @@ public class LongestIncreasingSubsequence {
      */
     public int longestSubsequenceWithActualSolution(int arr[]){
         int T[] = new int[arr.length];
-        int actualSolution[] = new int[arr.length];
+        int actualSolution[] = new int[arr.length]; //temp array as the same size as the ooriginal array
         for(int i=0; i < arr.length; i++){
-            T[i] = 1;
+            T[i] = 1; //you know that the longest subsequence is at least length one
             actualSolution[i] = i;
         }
         
-        for(int i=1; i < arr.length; i++){
-            for(int j=0; j < i; j++){
-                if(arr[i] > arr[j]){
-                    if(T[j] + 1 > T[i]){
+        for(int i=1; i < arr.length; i++){ //stat i at 1
+            for(int j=0; j < i; j++){ //start j at 0
+                if(arr[i] > arr[j]){ //if element j is less than element i the longest subsequence at i will be longest subs at j plus one
+                    if(T[j] + 1 > T[i]){ // has to meet two requierements, current > previous ending and size is increasing!!
                         T[i] = T[j] + 1;
                         //set the actualSolution to point to guy before me
                         actualSolution[i] = j;
