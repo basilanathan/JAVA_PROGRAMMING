@@ -8,6 +8,7 @@ public class findMax {
 		//findMax_ex("11");
 		System.out.println(findMax_ex("11"));
 		System.out.println(findMax_ex("111"));
+		System.out.println(findMax_ex("89"));
 	}
 	
 	//The idea here is to parse through the input one number at a time and if the number is 0 or 1 then use + else use *.
