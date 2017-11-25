@@ -1,4 +1,4 @@
-package ch1.isUnique;
+package cci.ch1;
 
 /**
  * @author basila nathan
