@@ -5,6 +5,8 @@ public class StringCompression {
 	//driver method 
 	public static void main(String[] args) {
 		System.out.println(compress("aabcccccaaa"));
+		System.out.println(compress("abcdefghijklmno"));
+
 	}
 	
 	public static String compress(String str) {
@@ -19,8 +21,10 @@ public class StringCompression {
 				count = 0;
 			}
 		}
-		
+		//result = testCondition ? value1 : value2
+		//if conpressed.length is less that str.length then return the compressed if not return original str
 		return compressed.length() < str.length() ? compressed.toString() : str;
+		
 	}
 
 }
