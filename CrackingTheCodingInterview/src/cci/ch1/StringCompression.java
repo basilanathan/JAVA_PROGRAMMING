@@ -1,5 +1,15 @@
 package cci.ch1;
 
+/**
+ * 
+ * @author basila
+ * @date 11/25/207
+ * 
+ * Time: O(N)
+ * Space: O(1)
+ *
+ */
+
 public class StringCompression {
 	
 	//driver method 
