@@ -33,6 +33,7 @@ public class Partition {
 			}
 			node = next;
 		}
+		afterEnd.next = null;
 		if (beforeStart == null) {
 			return afterStart;
 		}
