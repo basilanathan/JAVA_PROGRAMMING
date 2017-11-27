@@ -5,48 +5,75 @@ package cci.ch1;
  * @author basila
  * @date 11/26/2017
  * 
- * Space O(N)
+ * Space O(1)
  */
 
-public class ZeroMatrix {
+public class ZeroMatrix_B {
 	
 	public static void main(String[] args) {
 		int [][] matrix = {
 				{0,  2,  3,  4},
 				{5,  6,  7,  8},
-				{9, 10, 0, 12},
+				{9, 10, 11, 12},
 				{13, 14, 15, 16}
 		};
 		
-		setZeroes(matrix);
+		setZeros(matrix);
 		System.out.println();
 		ZeroMatrix.printMatrix(matrix);
 	}
-	public static void setZeroes(int[][] matrix) {
-		//using estra space
+	
+	public static void setZeros(int[][] matrix) {
+		boolean rowHasZero = false;
+		boolean columnHasZero = false;
 		
-		boolean row[] = new boolean[matrix.length]; //row = [false, false, false]
-		boolean column[] = new boolean[matrix[0].length]; //column = [false, false, false]
+		//check is first row has zero
+		for(int j = 0; j < matrix[0].length; j++) {
+			if(matrix[0][j] == 0) {
+				rowHasZero = true;
+				break;
+			}
+		}
 		
-		//store the row and column index with value 0
+		//check if first column has zero
 		for(int i = 0; i < matrix.length; i++) {
-			for (int j = 0; j < matrix[0].length; j++) {
+			if(matrix[i][0] == 0) {
+				columnHasZero = true;
+				break;
+			}
+		}
+		
+		//check for zeros in the rest of the array
+		for(int i = 1; i < matrix.length; i++) {
+			for(int j = 1; j < matrix[0].length; j++) {
 				if(matrix[i][j] == 0) {
-					row[i] = true; //set the entire row to true
-					column[j] = true; //set the entire column to true
+					matrix[i][0] = 0; //row
+					matrix[0][j] = 0; //column
 				}
 			}
 		}
 		
-		//nullify the row
-		for(int i = 0; i < row.length; i++) {
-			if(row[i]) nullifyRow(matrix, i);
+		//nullify row based on the value of the first column
+		for (int i = 1; i < matrix.length; i++) {
+			if(matrix[i][0] == 0) {
+				nullifyRow(matrix, i);
+			}
+		}
+		//nullify column based on the value of the first row
+		for (int j = 1; j < matrix[0].length; j++) {
+			if (matrix[0][j] == 0) {
+				nullifyCloumn(matrix, j);
+			}
 		}
 		
-		//nullify column
-		for(int j = 0; j < column.length; j++) {
-			if (column[j]) nullifyCloumn(matrix, j); 
-				
+		//nullify first row
+		if (rowHasZero) {
+			nullifyRow(matrix, 0);
+		}
+		
+		//nullify first column
+		if (columnHasZero) {
+			nullifyCloumn(matrix, 0);
 		}
 	}
 	
