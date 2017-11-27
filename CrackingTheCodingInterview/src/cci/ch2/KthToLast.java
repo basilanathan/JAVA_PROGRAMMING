@@ -1,17 +1,27 @@
 package cci.ch2;
 
+/**
+ * 
+ * @author basila
+ * @date 11/27/2017
+ * 
+ * Time O(N)
+ * Space O(1)
+ *
+ */
+
 public class KthToLast {
 	
 	private static class Node {
 		Node next = null;
 		int data;
 		
-		public Node(int d) {
-			data = d;
+		public Node(int data) {
+			this.data = data;
 		}
 		
-		void add(int d) {
-			Node endNode = new Node(d);
+		void add(int data) {
+			Node endNode = new Node(data);
 			Node n = this;
 			while(n.next != null) {
 				n = n.next;
@@ -58,7 +68,7 @@ public class KthToLast {
 		linked.add(7);
 		linked.add(6);
 		//printList(linked);
-		System.out.println(nthToLast(linked, 3));
+		System.out.println(nthToLast(linked, 4));
 
 
 	}
