@@ -5,6 +5,8 @@ package cci.ch2;
  * 
  * @author basila
  * 
+ * Time Complexity: O(m+n) where m and n are the sizes of given two linked lists.
+ * 
  *Approach:
 
  *Get the length of both the lists.
@@ -21,14 +23,14 @@ package cci.ch2;
  *Else just cre­ate a new Node with sum.
  *Add the newly cre­ated node to the result linked list with the help of newHead.
  */
-class Node {
-	public int data;
-	public Node next;
-	public Node(int data) {
-		this.data = data;
-		this.next = null;
-	}
-}
+//class Node {
+//	public int data;
+//	public Node next;
+//	public Node(int data) {
+//		this.data = data;
+//		this.next = null;
+//	}
+//}
 
 public class PartialSumForward_B {
 	public int carry = 0;

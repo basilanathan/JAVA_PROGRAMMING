@@ -2,6 +2,12 @@ package cci.ch2;
 
 import helpers.LinkedListNode;
 
+/**
+ * 
+ * @author basila
+ * Time Complexity: O(m+n) where m and n are the sizes of given two linked lists.
+ */
+
 public class SumLists {
 	
 	public static LinkedListNode addLists(LinkedListNode l1, LinkedListNode l2, int carry) {
