@@ -1,5 +1,12 @@
 package cci.ch2;
 
+/**
+ * 
+ * @author basila
+ * Time O(N)
+ * Space O(1)
+ */
+
 //class Node {
 //	public int data;
 //	public Node next;

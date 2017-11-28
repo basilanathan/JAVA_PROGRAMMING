@@ -1,13 +1,20 @@
 package cci.ch2;
 
-class Node {
-	public int data;
-	public Node next;
-	public Node(int data) {
-		this.data = data;
-		this.next = null;
-	}
-}
+/**
+ * 
+ * @author basila
+ * Time O(N)
+ * Space O(N) if Function Call Stack size is considered, otherwise O(1).
+ */
+
+//class Node {
+//	public int data;
+//	public Node next;
+//	public Node(int data) {
+//		this.data = data;
+//		this.next = null;
+//	}
+//}
 
 public class Palindrome_Recursive {
 	
@@ -63,15 +70,31 @@ public class Palindrome_Recursive {
             currNode=currNode.next;
         }
     }
+    
+    public static Node buildList(int[] a) {
+    		if(a == null || a.length == 0) return null;
+    		Node n = new Node(a[0]);
+    		Node head = n;
+    		for(int i = 1; i < a.length; ++i) {
+    			n.next = new Node(a[i]);
+    			n = n.next;
+    		}
+    		return head;
+    	
+    }
+    
     public static void main(String[] args) {
 		Palindrome_Recursive l = new Palindrome_Recursive();
-		Node h1 = new Node(0);
-		h1.next = new Node(1);
-		h1.next.next = new Node(2);
-		h1.next.next.next = new Node(3);
-		h1.next.next.next.next = new Node(2);
-		h1.next.next.next.next.next = new Node(1);
-		h1.next.next.next.next.next.next = new Node(0);
+//		Node h1 = new Node(0);
+//		h1.next = new Node(1);
+//		h1.next.next = new Node(2);
+//		h1.next.next.next = new Node(3);
+//		h1.next.next.next.next = new Node(2);
+//		h1.next.next.next.next.next = new Node(1);
+//		h1.next.next.next.next.next.next = new Node(0);
+		
+		int[] list = {0, 1, 2, 3, 2, 1, 0};
+		Node h1 = l.buildList(list);
 		
 		System.out.println("Original List");
 		l.display(h1);
