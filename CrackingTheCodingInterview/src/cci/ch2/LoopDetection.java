@@ -9,14 +9,14 @@ package cci.ch2;
  * Space O(1)
  */
 
-class Node {
-	public int data;
-	public Node next;
-	public Node(int data) {
-		this.data = data;
-		this.next = null;
-	}
-}
+//class Node {
+//	public int data;
+//	public Node next;
+//	public Node(int data) {
+//		this.data = data;
+//		this.next = null;
+//	}
+//}
 
 public class LoopDetection {
 	
