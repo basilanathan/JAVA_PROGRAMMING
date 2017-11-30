@@ -23,14 +23,14 @@ package cci.ch2;
  *Else just cre­ate a new Node with sum.
  *Add the newly cre­ated node to the result linked list with the help of newHead.
  */
-//class Node {
-//	public int data;
-//	public Node next;
-//	public Node(int data) {
-//		this.data = data;
-//		this.next = null;
-//	}
-//}
+class Node {
+	public int data;
+	public Node next;
+	public Node(int data) {
+		this.data = data;
+		this.next = null;
+	}
+}
 
 public class PartialSumForward_B {
 	public int carry = 0;
@@ -85,7 +85,7 @@ public class PartialSumForward_B {
 		carry = 0;
 		
 		if(a >= 10) { // a = 12
-			carry = 1; // carry = 1
+			carry = a/10; // carry = 1
 			a = a % 10; // a = 2
 		}
 		Node n = new Node(a);

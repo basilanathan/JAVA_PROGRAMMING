@@ -1,15 +1,14 @@
 package cci.ch2;
 
-import java.util.Currency;
 
-class Node {
-	public int data;
-	public Node next;
-	public Node(int data) {
-		this.data = data;
-		this.next = null;
-	}
-}
+//class Node {
+//	public int data;
+//	public Node next;
+//	public Node(int data) {
+//		this.data = data;
+//		this.next = null;
+//	}
+//}
 
 public class SumList_LC {
 	public static Node addTwoNumbers(Node l1, Node l2) {
