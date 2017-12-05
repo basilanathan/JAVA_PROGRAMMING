@@ -10,6 +10,9 @@ import helpers.TreeNode;
  * For the purpose of this question, a balanced tree is defined
  * to be a tree such that height of left sub tree and right 
  * sub tree of any given node never differs by one.
+ * 
+ * Time: O(N)
+ * Space: O(H) H is the height of the tree
  */
 
 public class CheckBalanced {
