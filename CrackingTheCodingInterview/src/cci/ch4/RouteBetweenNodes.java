@@ -22,28 +22,28 @@ public class RouteBetweenNodes {
 	}
 	
 	public static boolean search(Graph g, Node start, Node end) {
-		LinkedList<Node> q = new LinkedList<Node>();
+		LinkedList<Node> q = new LinkedList<Node>(); //create queue of nodes
 		
 		for(Node u : g.getNodes()) {
-			u.state = State.Unvisited;
+			u.state = State.Unvisited; //set all the nodes to unvisited
 		}
-		start.state = State.Visiting;
-		q.add(start);
+		start.state = State.Visiting; //set start node to visiting
+		q.add(start); //add start node to queue
 		Node u;
-		while(!q.isEmpty()) {
-			u = q.removeFirst();
+		while(!q.isEmpty()) { 
+			u = q.removeFirst(); //remove start node from the queue
 			if(u != null) {
-				for (Node v : u.getAdjacent()) {
+				for (Node v : u.getAdjacent()) { //get adjacent nodes
 					if(v.state = State.Unvisited) {
-						if(v == end) {
+						if(v == end) { //if one of them is the end return true
 							return true;
 						} else {
-							v.state = State.Visiting;
-							q.add(v);
+							v.state = State.Visiting; 
+							q.add(v); //else add adjacent node to queue
 						}
 					}
 				}
-				u.state = State.Visited;
+				u.state = State.Visited; //update start node to visited
 			}
 		}
 		return false;
