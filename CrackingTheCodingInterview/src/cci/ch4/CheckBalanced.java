@@ -2,13 +2,25 @@ package cci.ch4;
 
 import helpers.TreeNode;
 
+/**
+ * 
+ * @author basila
+ *
+ * Implement a function to check if a binary tree is balanced.
+ * For the purpose of this question, a balanced tree is defined
+ * to be a tree such that height of left sub tree and right 
+ * sub tree of any given node never differs by one.
+ */
+
 public class CheckBalanced {
 	
 	public static int checkHeight(TreeNode root) {
+		//if node is null
 		if(root == null) {
 			return -1;
 		}
 		
+		//find height of left and right recursively
 		int leftHeight = checkHeight(root.left);
 		if (leftHeight == Integer.MIN_VALUE) return Integer.MIN_VALUE;
 		
@@ -20,6 +32,7 @@ public class CheckBalanced {
 		if (Math.abs(heightDiff) > 1) {
 			return Integer.MIN_VALUE;
 		} else {
+			//whichever is greater add 1 to it
 			return Math.max(leftHeight, rightHeight) + 1;
 		}
 	}
