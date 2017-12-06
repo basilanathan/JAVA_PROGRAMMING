@@ -6,6 +6,11 @@ import helpers.TreeNode;
  * 
  * @author basila
  * 
+ * Design an algorithm and write code to find the fist common
+ * ancestor of two nodes in a binary tree. Avoid storing additional
+ * nodes in a data structure.
+ * Note : This is not necessarily a BST
+ * 
  * a node is the common ancestor, if the nodes are on opposite sides from some parent
  * if they are on opposite sites, return the root node
  * otherwise, recursively call on side they are both on
