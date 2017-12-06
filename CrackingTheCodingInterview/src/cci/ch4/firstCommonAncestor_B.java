@@ -14,6 +14,8 @@ import helpers.TreeNode;
  * a node is the common ancestor, if the nodes are on opposite sides from some parent
  * if they are on opposite sites, return the root node
  * otherwise, recursively call on side they are both on
+ * 
+ * Time: O(d) where d is the depth
  *
  */
 
