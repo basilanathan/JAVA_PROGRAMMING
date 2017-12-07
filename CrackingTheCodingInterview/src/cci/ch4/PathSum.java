@@ -38,7 +38,17 @@ import java.util.Map;
  * - the total number of valid paths in the subtree rooted at the current node's left child
  * - the total number of valid paths in the subtree rooted at the current node's right child
  * - the number of valid paths ended by the current node
+ * 
+ * - there are two ways to see if the target sum is in a sequence
+ * - the first way is checking that the running sum on a node path equals the target sum
+ * - the other way is if a subset of the path includes the target sum
+ * - for the first way, we just keep track of the number of times the running total equaled the target sum
+ * - for the second way, we keep track of the history of running totals for each path
+ * - if we subtract the running total from the target sum, we can see what a previous running sum needed to be
+ * - we check how many times this previous running sum actually happened and increment the count based on the number of times that running sum occured
+ * - we make sure to decrement the running sum from the tracker after the recursive calls because we’re only using one tracker and we want it to track the running sums for only one path each time
  *
+ *http://www.yujinc.com/category/cracking-the-coding-interview/page/3/
  */
 
 public class PathSum {
