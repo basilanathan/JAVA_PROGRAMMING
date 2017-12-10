@@ -24,7 +24,7 @@ public class sortStack {
 			}
 			s2.push(temp);
 		}
-		
+		//copy everything from the buffer stack to the original stack
 		while(!s2.isEmpty()) {
 			s1.push(s2.pop());
 		}

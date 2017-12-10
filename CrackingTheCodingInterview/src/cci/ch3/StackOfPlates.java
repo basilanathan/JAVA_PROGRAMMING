@@ -34,7 +34,9 @@ public class StackOfPlates {
 			stacks.add(stack);
 		}
 	}
-	
+
+	//pop() should behave similar to push() in that it should operate on the last stack
+	//if the last stack is empty(after popping) then remove the stack from the list of stacks/
 	public int pop() {
 		Stack last = getLastStack();
 		if(last == null) System.out.println("stack is empty");

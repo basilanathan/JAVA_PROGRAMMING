@@ -16,7 +16,7 @@ public class QueueViaStacks<T> {
 	
 	public QueueViaStacks() {
 		stackNewest= new Stack<T>();
-		stackOldest = new Stack<>();
+		stackOldest = new Stack<T>();
 	}
 	
 	public int size() {
