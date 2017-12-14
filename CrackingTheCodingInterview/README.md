@@ -129,14 +129,14 @@ Java Solutions for Cracking the Coding Interview - 6th Edition
 - [ ] 06 - Test an ATM
 
 **Ch 13 - Java**
-- [ ] 01 - Private Constructor
-- [ ] 02 - Return from Finally
-- [ ] 03 - Final etc
+- [X] [01 - Private Constructor](../CrackingTheCodingInterview/src/cci/ch13/PrivateConstructor.java)
+- [X] [02 - Return from Finally](../CrackingTheCodingInterview/src/cci/ch13/ReturnFinally.java)
+- [X] [03 - Final etc](../CrackingTheCodingInterview/src/cci/ch13/Final.java)
 - [ ] 04 - Generics v/s Templates
-- [ ] 05 - TreeMap, HashMap, LinkedHashMap
+- [X] [05 - TreeMap, HashMap, LinkedHashMap](../CrackingTheCodingInterview/src/cci/ch13/Maps.java)
 - [ ] 06 - Object Reflection
-- [ ] 07 - Lambda Expressions
-- [ ] 08 - Lambda Random
+- [X] [07 - Lambda Expressions](../CrackingTheCodingInterview/src/cci/ch13/LabdaExpressions.java)
+- [X] [08 - Lambda Random](../CrackingTheCodingInterview/src/cci/ch13/LambdaRandom.java)
 
 **Ch 14 - Databases**
 - [ ] 01 - Multiple Apartments
