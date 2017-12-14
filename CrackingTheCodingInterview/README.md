@@ -117,8 +117,8 @@ Java Solutions for Cracking the Coding Interview - 6th Edition
 - [ ] 07 - Missing Int
 - [X] [08 - Find Duplicates](../CrackingTheCodingInterview/src/cci/ch10/FindDuplicate.java)
 - [X] [09 - Sorted Matrix Search](../CrackingTheCodingInterview/src/cci/ch10/SortedMatrixSearch.java)
-- [ ] 10 - Rank from Stream
-- [ ] 11 - Peaks and Valleys
+- [X] [10 - Rank from Stream](../CrackingTheCodingInterview/src/cci/ch10/RankFromStream.java)
+- [X] [11 - Peaks and Valleys](../CrackingTheCodingInterview/src/cci/ch10/PeaksAndValleys.java)
 
 **Ch 11 - Testing**
 - [ ] 01 - Mistake
