@@ -12,6 +12,9 @@ import java.util.Arrays;
  * (one value in each array) with the smallest(non-negative) difference. Return the difference.
  * 
  * </br>
+ * 
+ * Time: O(AB)
+ * Time: O(A log A + B log B) to sort and O(A + B) to fin min.
  *
  */
 
