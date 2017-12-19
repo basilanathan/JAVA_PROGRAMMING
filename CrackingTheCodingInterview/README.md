@@ -157,13 +157,13 @@ Java Solutions for Cracking the Coding Interview - 6th Edition
 - [ ] 07 - FizzBuzz
 
 **Ch 16 - Moderate**
-- [ ] 01 - Number Swapper
-- [ ] 02 - Word Frequencies
+- [X] [01 - Number Swapper](../CrackingTheCodingInterview/src/cci/moderate/NumberSwapper.java)
+- [X] [02 - Word Frequencies](../CrackingTheCodingInterview/src/cci/moderate/WordFrequencies.java)
 - [ ] 03 - Intersection
-- [ ] 04 - Tic Tac Win
-- [ ] 05 - Factorial Zeros
-- [ ] 06 - Smallest Difference
-- [ ] 07 - Number Max
+- [X] [04 - Tic Tac Win](../CrackingTheCodingInterview/src/cci/moderate/TicTacwin.java)
+- [X] [05 - Factorial Zeros](../CrackingTheCodingInterview/src/cci/moderate/FactorialZeroes.java)
+- [X] [06 - Smallest Difference](../CrackingTheCodingInterview/src/cci/moderate/SmallestDifference.java)
+- [X] [07 - Number Max](../CrackingTheCodingInterview/src/cci/moderate/NumberMax.java)
 - [ ] 08 - English Int
 - [ ] 09 - Operations
 - [ ] 10 - Living People
