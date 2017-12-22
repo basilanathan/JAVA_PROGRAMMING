@@ -14,7 +14,8 @@ package cci.ch2;
 
  *Cre­ate a global vari­able carry=0.
  *Cre­ate a new­Head = null;
- *new­Head will be the start­ing node of our result linked list and curr node will the ref­er­ence to the cur­rent node on which we are work­ing in our result linked list.
+ *new­Head will be the start­ing node of our result linked list and curr node will the ref­er­ence to 
+ *the cur­rent node on which we are work­ing in our result linked list.
  *Now using recur­sion travel in both the list till the end.
  *So now nodes are stores in a stack
  *Now while com­ing back, each node will pop out from the stack in reverse order
