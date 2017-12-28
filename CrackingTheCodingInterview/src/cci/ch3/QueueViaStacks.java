@@ -11,13 +11,13 @@ import java.util.Stack;
  */
 
 public class QueueViaStacks<T> {
-	Stack<T> stackNewest;
-	Stack<T> stackOldest;
+	Stack<T> stackNewest = new Stack<T>();
+	Stack<T> stackOldest = new Stack<T>();
 	
-	public QueueViaStacks() {
-		stackNewest= new Stack<T>();
-		stackOldest = new Stack<T>();
-	}
+//	public QueueViaStacks() {
+//		stackNewest= new Stack<T>();
+//		stackOldest = new Stack<T>();
+//	}
 	
 	public int size() {
 		return stackNewest.size() + stackOldest.size();
