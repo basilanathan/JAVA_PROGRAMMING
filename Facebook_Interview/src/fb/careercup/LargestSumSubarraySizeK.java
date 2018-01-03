@@ -1,5 +1,15 @@
 package fb.careercup;
 
+/**
+ * 
+ * @author basila
+ * 
+ * Find Largest sum of subarray with size K
+ * 
+ * http://www.ideserve.co.in/learn/maximum-average-subarray
+ *
+ */
+
 public class LargestSumSubarraySizeK {
 	
 	public int largestSum(int[] array, int k) {
@@ -43,13 +53,38 @@ public class LargestSumSubarraySizeK {
 		return result;
 	}
 	
+	//SUBARRAY
+	public int maxSumSubArray(int[] input, int k) {
+		int n = input.length;
+		if(k > n || k == n) return 0;
+		
+		int sum = input[0];
+		for(int i = 1; i < k; i++) {
+			sum += input[i];
+		}
+		
+		int maxSum = sum;
+		//int maxSumIndex = 0;
+		
+		for(int i = k; i < n; i++) {
+			sum = sum - input[i - k] + input[i];
+			if(sum > maxSum) {
+				maxSum = sum;
+				//maxSumIndex = i - k;
+			}
+		}
+		
+		return maxSum;
+	}
+	
 	public static void main(String[] args) {
 		LargestSumSubarraySizeK test = new LargestSumSubarraySizeK();
 		
-		int arr[] = {100, 200, 300, 400};
+		int arr[] = {11, -8, 16, -7, 24, -2, 3};
 		
-		System.out.println(test.largestSum(arr, 2));
-		System.out.println(test.largestSum2(arr, 2));
+		System.out.println(test.largestSum(arr, 3));
+		System.out.println(test.largestSum2(arr, 3));
+		System.out.println(test.maxSumSubArray(arr, 3));
 		
 	}
 
