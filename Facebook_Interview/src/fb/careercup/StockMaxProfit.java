@@ -1,5 +1,17 @@
 package fb.careercup;
 
+/**
+ * 
+ * @author basila
+ * 
+ * you have an array with the ith element is the price of a given stock on day i
+ * you can buy stock at any day but can only buy once a day. but if you see the stock
+ *  you must sell all of them at once.
+ *  
+ *  return max profit
+ *
+ */
+
 public class StockMaxProfit {
 	
 	public int maxProfit(int[] prices) {
