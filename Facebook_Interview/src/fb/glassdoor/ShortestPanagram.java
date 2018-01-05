@@ -3,6 +3,15 @@ package fb.glassdoor;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * 
+ * @author basila
+ * 
+ * Find the shortest pangram in a sentence?
+ * It is a typical sliding window algorithm on which many string problems are based.
+ *
+ */
+
 public class ShortestPanagram {
 	
 	   String shortestPangram(String s, Map dict) {
