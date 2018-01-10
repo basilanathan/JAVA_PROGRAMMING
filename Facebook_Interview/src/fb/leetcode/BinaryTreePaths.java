@@ -1,7 +1,9 @@
 package fb.leetcode;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 
 /**
  * 
@@ -39,6 +41,32 @@ import java.util.List;
  */
 
 public class BinaryTreePaths {
+    //BFS - Queue
+    public List<String> binaryTreePaths1(TreeNode root) {
+        List<String> list=new ArrayList<String>();
+        Queue<TreeNode> qNode=new LinkedList<TreeNode>();
+        Queue<String> qStr=new LinkedList<String>();
+
+        if (root==null) return list;
+        qNode.add(root);
+        qStr.add("");
+        while(!qNode.isEmpty()) {
+            TreeNode curNode=qNode.remove();
+            String curStr=qStr.remove();
+
+            if (curNode.left==null && curNode.right==null) list.add(curStr+curNode.val);
+            if (curNode.left!=null) {
+                qNode.add(curNode.left);
+                qStr.add(curStr+curNode.val+"->");
+            }
+            if (curNode.right!=null) {
+                qNode.add(curNode.right);
+                qStr.add(curStr+curNode.val+"->");
+            }
+        }
+        return list;
+    }
+	
 	//string concatenation operation becomes more expensive when going deeper. 
 	//the total time complexity is O(n logn). you are touching every node and and you are traversing the height of the tree
 	//each node for O(n), but each call requires a concatenation bounded by the height of the tree, the 

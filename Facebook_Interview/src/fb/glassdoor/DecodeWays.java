@@ -1,4 +1,4 @@
-package fb.leetcode;
+package fb.glassdoor;
 
 /**
  * 
@@ -76,7 +76,7 @@ public class DecodeWays {
     
     public static void main(String[] args) {
 		String test1 = "1234";
-		//System.out.println(numDecodings(test1));
+		System.out.println("Answer: " + numDecodings(test1));
 		
 		for(int i = 2; i <= 4; i++) {
 			System.out.print(test1.substring(i - 1, i) + " ");

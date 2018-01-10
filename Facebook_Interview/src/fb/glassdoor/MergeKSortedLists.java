@@ -71,6 +71,32 @@ public class MergeKSortedLists {
 	
 	/*
 	 * IN PLACE SOLUTION
+	 * 
+	 * Merge with Divide And Conquer [Accepted]
+		Intuition & Algorithm
+		
+		This approach walks alongside the one above but is improved a lot. We don't need to traverse most nodes many times repeatedly
+		
+		Pair up \text{k}k lists and merge each pair.
+		
+		After the first pairing, \text{k}k lists are merged into k/2k/2 lists with average 2N/k2N/k length, then k/4k/4, k/8k/8 and so on.
+		
+		Repeat this procedure until we get the final sorted linked list.
+		
+		Thus, we'll traverse almost NN nodes per pairing and merging, and repeat this procedure about \log_{2}{k}log
+		​2
+		​​ k times.
+
+	 * Complexity Analysis
+
+		Time complexity : O(Nlogk) where k is the number of linked lists.
+		
+		We can merge two sorted linked list in O(n) time where n is the total number of nodes in two lists.
+		Sum up the merge process and we can get O(Nlogk)
+		Space complexity : O(1)
+		
+		We can merge two sorted linked lists in O(1) space.
+	 * 
 	 * O(nlogk) and not using heap or priority queue, n means the total elements and k means the size of list.
 	 * */
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
