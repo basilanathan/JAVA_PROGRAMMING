@@ -1,4 +1,4 @@
-package fb.leetcode;
+package fb.glassdoor;
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -7,27 +7,29 @@ import java.util.Queue;
  * 
  * @author basila
  * 
- * 
- * You have a room with n people. A celebrity walks in. Everyone knows the celebrity, 
- * the celebrity knows no one. Non-celebrities may/may not know anyone in the room. 
- * Give an algorithm to find the celebrity. Discuss the complexity.
- * 
- * 
- * Our algorithm consists of two phases: in the elimination phase, we eliminate all but one 
- * person from being the celebrity; in the verification phase we check whether this one 
- * remaining person is indeed a celebrity.
- * 
+ * If the celebrity is present in the party, we will call HaveAcquaintance() 3(N-1) times. 
  * Time: O(N)
- * Space; O(1)
+ * Space: O(1)
  * 
- * http://yuanhsh.iteye.com/blog/2183929
- * - using stack and queue
+ * https://www.geeksforgeeks.org/the-celebrity-problem/
+ * https://discuss.leetcode.com/category/347/find-the-celebrity
  *
  */
+
+/*
+ * Find Celebrity
+ * - find candidate
+ * - if candidate knows i, candidate can't be a celbrity. Make i the candidate
+ * - exit out of first forloop - found a candidate that could be a potential celebrite
+ * - check everyone else knows the candidate
+ * - if the candidate knows the current person or the current person doesn't know the candidate then return -1
+ * 
+ * */
+
 /* The knows API is defined in the parent class Relation.
 boolean knows(int a, int b); */
 
-public class FindTheCelebrity extends Relation {
+public class FindCelebrity {
 	
 
     public int findCelebrity(int n) {
@@ -72,6 +74,5 @@ public class FindTheCelebrity extends Relation {
                 return -1;  
         }  
         return c;  
-    }  
-
+    }
 }

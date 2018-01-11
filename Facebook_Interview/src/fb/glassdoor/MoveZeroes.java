@@ -34,7 +34,7 @@ public class MoveZeroes {
 	
 	//Time : O(N)
 	//Space : O(1)
-	public void moveZeroes(int[] nums) {
+	public static int [] moveZeroes(int[] nums) {
 	    int leftMostZeroIndex = 0; // The index of the leftmost zero
 	    for (int i = 0; i < nums.length; i++) {
 	        if (nums[i] != 0) {
@@ -46,7 +46,19 @@ public class MoveZeroes {
 	            leftMostZeroIndex++;
 	        }
 	    }
+	    return nums;
 	}
+	
+	/* WALKTHROUGH
+	 * 
+	 * {2, 1, 3, 0, 5, 0, 6} 
+	 *  _  _  _  5, 0, 0, 6 
+	 *  _  _  _  5, 6, 0, 0
+	 *     
+	 * leftIndex = 0 1 2 3 4 5
+	 * i  = 0 1	2 3 4 5 6
+	 * 
+	 * */
 	
 	
 	// Shift non-zero values as far forward as possible
@@ -72,6 +84,7 @@ public class MoveZeroes {
 	    }
 	}
 	
+	//BRUTE FORCE
 	public static int [] moveZeroes3(int[] nums) {
 		int j = 0;
 		

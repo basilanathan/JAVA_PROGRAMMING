@@ -1,4 +1,4 @@
-package fb.leetcode;
+package fb.glassdoor;
 
 import java.util.ArrayList;
 import java.util.Arrays;
