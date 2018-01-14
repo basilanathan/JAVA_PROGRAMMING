@@ -1,4 +1,4 @@
-package fb.glassdoor;
+package fb.coderust;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -19,7 +19,6 @@ import java.util.List;
  * we can sort intervals in place, we do not need more than constant additional space. 
  * Otherwise, we must allocate linear space to store a copy of intervals and sort that.
  *
- *https://www.educative.io/collection/page/5642554087309312/5679846214598656/100003
  */
 
 class Interval {

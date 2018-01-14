@@ -1,8 +1,25 @@
-package algo.quicksort;
+package fb.coderust;
 
 import java.util.Arrays;
 
-public class App {
+/**
+ * 
+ * @author basila
+ * 
+ * Hints
+	Divide and conquer
+	Solution
+	Runtime Complexity
+	Linearithmic, O(nlogn).
+	
+	Memory Complexity
+	Logarithmic, O(logn).
+	
+	Recursive solution has O(logn) memory complexity as it will consume memory on the stack.
+ *
+ */
+
+public class QuickSort {
 
 	public static void main(String[] args) {
 		int inputArray[] = { 12, 81, 74, 43, 1098, 0, 8, 92, 17, 754, 912, 0, 6, 4 };

@@ -5,6 +5,7 @@ package fb.glassdoor;
 
 //https://www.careercup.com/question?id=5731103635668992
 //https://stackoverflow.com/questions/3004793/move-all-zero-values-in-a-big-array-to-its-front-portion-in-a-time-efficiency-wa
+//https://www.educative.io/collection/page/5642554087309312/5679846214598656/180002
 public class MoveZeroesFront {
 	
 	public static int[] moveZeroesFront(int[] nums) {
