@@ -46,7 +46,7 @@ Sort Linked List
 	the node being inserted.
  * 
  * https://www.educative.io/collection/page/5642554087309312/5679846214598656/280002
- * 
+ * https://github.com/awangdev/LintCode/blob/master/Java/Insertion%20Sort%20List.java
  * 
  * */
 
