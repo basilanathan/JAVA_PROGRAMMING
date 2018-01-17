@@ -37,6 +37,9 @@ Similar Problems: (H) Merge Intervals, (E) Meeting Rooms
  * 
  * There's a trick here too. If we manage these rooms as List, each query takes O (N) time, 
  * and if we manage it with a heap, we can use logN time to find the earliest end of the room.
+ * 
+ * 
+ * https://segmentfault.com/a/1190000003894670
  * */
 
 public class MeetingRoomsII {
