@@ -1,4 +1,4 @@
-package algosJava;
+package fb.glassdoor;
 
 //Time: O(N)
 //Space: O(1)

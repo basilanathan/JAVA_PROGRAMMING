@@ -1,4 +1,4 @@
-package algosJava;
+package fb.coderust;
 
 /*
 Remove all elements from a linked list of integers that have value val.

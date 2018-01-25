@@ -1,4 +1,4 @@
-package algosJava;
+package fb.glassdoor;
 
 public class StringEquation {
 	

@@ -1,4 +1,4 @@
-package algosJava;
+package fb.coderust;
 
 /*
 Sort a linked list using insertion sort.

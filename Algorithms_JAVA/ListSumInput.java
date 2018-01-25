@@ -1,4 +1,4 @@
-package algosJava;
+package fb.careercup;
 
 import java.util.ArrayList;
 import java.util.Arrays;

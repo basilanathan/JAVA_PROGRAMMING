@@ -1,4 +1,4 @@
-package algosJava;
+package fb.coderust;
 
 import java.util.HashMap;
 import java.util.HashSet;

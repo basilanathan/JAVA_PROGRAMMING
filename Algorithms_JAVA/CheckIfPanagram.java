@@ -1,4 +1,4 @@
-package algosJava;
+package fb.glassdoor;
 
 import java.util.HashSet;
 import java.util.Set;
