@@ -60,5 +60,9 @@ public class MergeTwoBinaryTrees {
         }
         return node;
     }
+    
+    public static void main(String[] args) {
+		
+	}
 
 }

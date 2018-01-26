@@ -45,7 +45,7 @@ public class ValidNumber {
             // e or E
             if (c == 'e' || c == 'E') {
                 // e cannot appear twice and digits must be in front of it
-                if (hasE || !hasNum) return false;
+                if (hasE || !hasNum) return false; //if there already is an e and no numbers in front
                 // e cannot be the last one
                 if (i == n - 1) return false;
                 
@@ -78,8 +78,48 @@ public class ValidNumber {
         return true;
     }
     
+    //return true if the charchter is ., +, -, e, E, 0 - 9
     boolean isValid(char c) {
         return c == '.' || c == '+' || c == '-' || c == 'e' || c == 'E' || c >= '0' && c <= '9';
     }
 
+}
+/*
+ * The idea is pretty straightforward. A valid number is composed of the significand and the exponent (which is optional). As we go through the string, do the following things one by one:
+	
+	skip the leading whitespaces;
+	check if the significand is valid. To do so, simply skip the leading sign and count the number of digits and the number of points. A valid significand has no more than one point and at least one digit.
+	check if the exponent part is valid. We do this if the significand is followed by ‘e’. Simply skip the leading sign and count the number of digits. A valid exponent contain at least one digit.
+	skip the trailing whitespaces. We must reach the ending 0 if the string is a valid number.
+ * 
+ * https://leetcode.com/problems/valid-number/discuss/23762
+ * */
+public class Solution {
+    public boolean isNumber(String s) {
+    	char[] c=s.trim().toCharArray();
+
+        if (c.length==0) return false;
+
+        int i=0,num=0;
+        if (c[i]=='+'||c[i]=='-') i++;
+
+        for(;i<c.length&&(c[i]>='0'&&c[i]<='9');i++) num++;
+        if (i<c.length&&c[i]=='.')i++;
+        for(;i<c.length&&(c[i]>='0'&&c[i]<='9');i++) num++;
+
+        if (num==0) return false;
+
+        if (i==c.length) return true;
+        else if (i<c.length&&c[i]!='e') return false;
+        else i++;
+
+        num=0;
+        if (i<c.length&&(c[i]=='+'||c[i]=='-')) i++;
+
+        for(;i<c.length&&(c[i]>='0'&&c[i]<='9');i++) num++;
+        if (num==0) return false;
+
+        if (i==c.length) return true;
+        else return false;
+    }
 }
