@@ -1,6 +1,7 @@
 package fb.leetcode;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
@@ -68,6 +69,8 @@ public class BinaryTreePaths {
     }
 	
 	//string concatenation operation becomes more expensive when going deeper. 
+    //“StringBuilder” is a mutable object, it will hold its value after returning.
+    //Whereas String creates a copy in every recursion, you don’t need to worry about the “side-effect” when backtrack.
 	//the total time complexity is O(n logn). you are touching every node and and you are traversing the height of the tree
 	//each node for O(n), but each call requires a concatenation bounded by the height of the tree, the 
 	//complexity should be O(n * h) or in the case of a balanced tree O(n * logn)
@@ -110,6 +113,43 @@ public class BinaryTreePaths {
             helper(result, root.right, sb);
         }
         sb.setLength(len); //set it back to the old length (essentialy making a new String Builder) backtrack
+    }
+    
+//    *****Follow Up1****
+//    If we cannot use dfs(which is easy for printing paths)
+//    then use bfs, use hashmap to store parent-to-children paths
+
+    public void binaryTreePaths(TreeNode root) {
+        List<String> res = new ArrayList<>();
+        if (root == null)    return res;
+        HashMap<TreeNode, TreeNode> map = new HashMap<>(); // (node, parent node)
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.offer(root);
+        map.put(root, null);
+        while (!queue.isEmpty()) {
+            TreeNode curr = queue.poll();
+            if (curr.left == null && curr.right == null) {
+                String path = getPath(map, curr);//if you only want to print paths, we can use recursion here
+                res.add(path);
+            }
+            if (curr.left != null) {
+                map.put(curr.left, curr);
+                queue.offer(curr.left);
+            }
+            if (curr.right != null) {
+                map.put(curr.right, curr);
+                queue.offer(curr.right);
+            }
+        }
+        return res;
+    }
+    private String getPath(HashMap<TreeNode, TreeNode> map, TreeNode node) {
+        StringBuilder sb = new StringBuilder();
+        while (node != null) {//from leaf to root
+            sb.append(node.val + ">-");
+            node = map.get(node);
+        }
+        return sb.reverse().substring(2);
     }
 
 }

@@ -28,6 +28,11 @@ public class FirstBadVersion {
 		
 		while(left < right) {
 			int mid = left + (right - left) / 2;
+			/*The only scenario left is where isBadVersion(mid)⇒true. 
+			 * This tells us that midmid may or may not be the first bad version, but we can tell 
+			 * for sure that all versions after midmid can be discarded. Therefore we set right = mid 
+			 * as the new search space of interval[left,mid] (inclusive).
+			 * */
 			if(isBadVersion(mid)) {
 				right = mid;
 			} else {

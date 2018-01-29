@@ -30,8 +30,50 @@ package fb.coderust;
  *https://www.educative.io/collection/page/5642554087309312/5679846214598656/100002
  */
 
+/*
+ * /*
+    Just 1 binary search: this is the better solution
+    //Observation: 
+    //1. There is only one break point
+    //2. There has to be a side that's continous, either first section or second section.
+    //3. Need to locate that continous section, then check if target is part of the continous section
+*/
+
+/*
+ * 1) everytime check if targe == nums[mid], if so, we find it.
+2) otherwise, we check if the first half is in order (i.e. nums[left]<=nums[mid]) 
+  and if so, go to step 3), otherwise, the second half is in order,   go to step 4)
+3) check if target in the range of [left, mid-1] (i.e. nums[left]<=target < nums[mid]), if so, do search in the first half, i.e. right = mid-1; otherwise, search in the second half left = mid+1;
+4)  check if target in the range of [mid+1, right] (i.e. nums[mid]<target <= nums[right]), if so, do search in the second half, i.e. left = mid+1; otherwise search in the first half right = mid-1;
+ * 
+ * */
+
 public class SearchRotatedArray {
+	//solution 1
+    public int search(int[] nums, int target) {
+        if(nums.length == 0 || nums == null) return -1;
+        int start = 0, end = nums.length - 1;
+        while (start < end) {
+            int mid = (start + end) / 2;
+            if (nums[mid] > nums[end]) {  // eg. 3,4,5,6,1,2
+                if (target > nums[mid] || target <= nums[end]) {
+                    start = mid + 1;
+                } else {
+                    end = mid;
+                }
+            } else {  // eg. 5,6,1,2,3,4
+                if (target > nums[mid] && target <= nums[end]) {
+                    start = mid + 1;
+                } else {
+                    end = mid;
+                }
+            }
+        }
+        if (start == end && target != nums[start]) return -1;
+        return start;
+    }
 	
+    //solution 2
 	static int binary_search_rotated(int[] arr, int key) {
 		  return binary_search(arr, 0, arr.length-1, key);
 		}
