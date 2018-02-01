@@ -152,10 +152,12 @@ public class RemoveInvalidParentheses {
 		String string = "()())()";
 		String string2 = "(a)())()";
 		String string3 = "(((((";
-		
+		String string4 = ")(";
+
 		System.out.println(test.removeInvalidParentheses2(string));
 		System.out.println(test.removeInvalidParentheses2(string2));
 		System.out.println(test.removeInvalidParentheses2(string3));
+		System.out.println(test.removeInvalidParentheses2(string4));
 
 		
 	}
