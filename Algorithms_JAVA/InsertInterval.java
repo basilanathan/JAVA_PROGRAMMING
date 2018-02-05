@@ -65,8 +65,17 @@ public class InsertInterval {
 	        result.add(newInterval);
 	    return result;
 	}
-	
-	//SOLUTION 2
+	/*
+	 * Thoughts
+	 * Given Intervals are already sorted -> if not sort the intervals n log n
+	 * 1. add all the intervals where intervals.end < Newinterval.start
+	 * 2. if one is not the case then merge needs to happen
+	 * 		interval.start needs to be less that newInterval.end
+	 * 		newInterval.start -> math.min 
+	 * 		newInterval.end -> math.max
+	 * 
+	 * */
+	//SOLUTION 2 -> use this solution
 	public List<Interval> insert2(List<Interval> intervals, Interval newInterval) {
 	    List<Interval> result = new LinkedList<>();
 	    int i = 0;

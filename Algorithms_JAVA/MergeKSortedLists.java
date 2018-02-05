@@ -69,6 +69,116 @@ public class MergeKSortedLists {
 		return dummy.next;
 	}
 	
+	/*	PRIORITY QUEUE
+	 * Complexity Analysis
+
+Time complexity : O(N\log k)O(Nlogk) where \text{k}k is the number of linked lists.
+
+The comparison cost will be reduced to O(\log k)O(logk) for every pop and insertion to priority queue. But finding the node with the smallest value just costs O(1)O(1) time.
+There are NN nodes in the final linked list.
+Space complexity :
+
+O(n)O(n) Creating a new linked list costs O(n)O(n) space.
+O(k)O(k) The code above present applies in-place method which cost O(1)O(1) space. And the priority queue (often implemented with heaps) costs O(k)O(k) space (it's far less than NN in most situations).
+	 * */
+	
+
+	/**
+	 * Definition for singly-linked list.
+	 * public class ListNode {
+	 *     int val;
+	 *     ListNode next;
+	 *     ListNode(int x) { val = x; }
+	 * }
+	 */
+	class Solution {
+	    public ListNode mergeKLists(ListNode[] lists) {
+	        if (lists == null || lists.length == 0) {
+	            return null;
+	        }
+	        // Initialize the priority queue with customized comparator
+	        final PriorityQueue<ListNode> queue = new PriorityQueue<ListNode>(lists.length, new Comparator<ListNode>() {
+	            public int compare (final ListNode a, final ListNode b) {
+	                return a.val - b.val;
+	            }
+	        });
+	        for (int i = 0; i < lists.length; i++) {
+	            if (lists[i] != null) {
+	                queue.offer(lists[i]);
+	            }
+	        }
+
+	        if (queue.isEmpty()) {
+	            return null;
+	        }
+	        // Append the priority queue with all items
+	        ListNode dummy = new ListNode(0);
+	        ListNode head = dummy;
+	        while (!queue.isEmpty()) {
+	            ListNode node = queue.poll();
+	            if (node.next != null) {
+	                queue.offer(node.next);
+	            }
+	            head.next = node;
+	            head = head.next;
+	        }
+	        return dummy.next;
+	    }
+	}
+
+	/**
+	 * Definition for singly-linked list.
+	 * public class ListNode {
+	 *     int val;
+	 *     ListNode next;
+	 *     ListNode(int x) { val = x; }
+	 * }
+	 */
+
+
+	/*
+	    12.10.2015 recap
+	    Use queue to store the head of k lists. 
+	    First init with all heads.
+	    Because the ListNode always has a link to its next sibiling, so it's easy to add that sibling back to queue.
+	    time: m * Log(k)
+	*/
+	public class Solution {
+	    public ListNode mergeKLists(List<ListNode> lists) {  
+	        if (lists == null || lists.size() == 0) {
+	            return null;
+	        }
+	        PriorityQueue<ListNode> queue = 
+	        new PriorityQueue<ListNode>(lists.size(), new Comparator<ListNode>(){
+	            public int compare(ListNode a, ListNode b){
+	                return a.val - b.val;
+	            }
+	        });
+	        
+	        //populate queue with k lists' header
+	        for (int i = 0; i < lists.size(); i++) {
+	            if (lists.get(i) != null) {
+	                queue.offer(lists.get(i));
+	            }
+	        }
+	        
+	        ListNode dummy = new ListNode(0);
+	        ListNode node = dummy;
+	        while (!queue.isEmpty()) {
+	            ListNode curr = queue.poll();
+	            node.next = curr;
+	            
+	            if (curr.next != null) {
+	                queue.offer(curr.next);
+	            }
+	             
+	            node = node.next;   
+	        }
+	        
+	        return dummy.next;
+	    }
+	}
+	
 	/*
 	 * IN PLACE SOLUTION
 	 * 

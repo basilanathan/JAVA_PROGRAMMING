@@ -1,7 +1,8 @@
-package fb.glassdoor;
+package fb.leetcode;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -49,13 +50,17 @@ public class ThreeSum {
 	}
 	
 	/*
-	 * The idea is to sort an input array and then run through all indices of a possible first 
-	 * element of a triplet. For each possible first element we make a standard bi-directional 
+	 * The idea is to sort an input array and then run through all indices of a possible 
+	 * first element of a triplet. For each possible first element we make a standard bi-directional 
 	 * 2Sum sweep of the remaining part of the array. Also we want to skip equal elements to avoid 
 	 * duplicates in the answer without making a set or smth like that.
+	 * 
+	 *  Time: O(N^2)
+	 *  Space: O(1)
+	 * 
 	 * */
 	
-	public List<List<Integer>> threeSum(int[] num) {
+	public List<List<Integer>> threeSum2(int[] num) {
 	    Arrays.sort(num);
 	    List<List<Integer>> res = new LinkedList<>(); 
 	    for (int i = 0; i < num.length-2; i++) {
@@ -64,19 +69,13 @@ public class ThreeSum {
 	            while (lo < hi) {
 	                if (num[lo] + num[hi] == sum) {
 	                    res.add(Arrays.asList(num[i], num[lo], num[hi]));
-	                    while (lo < hi && num[lo] == num[lo+1]) lo++;
-	                    while (lo < hi && num[hi] == num[hi-1]) hi--;
-	                    lo++; hi--;
-	                } else if (num[lo] + num[hi] < sum) {
-	                    // improve: skip duplicates
-	                    while (lo < hi && num[lo] == num[lo+1]) lo++;
-	                    lo++;
-	                } else {
-	                    // improve: skip duplicates
-	                    while (lo < hi && num[hi] == num[hi-1]) hi--;
+	                    while (lo < hi && num[lo] == num[lo+1]) lo++; //skip duplicates on the left
+	                    while (lo < hi && num[hi] == num[hi-1]) hi--; //skip duplicates on the right
+	                    lo++; 
 	                    hi--;
-	                }
-	            }
+	                } else if (num[lo] + num[hi] < sum) lo++;
+	                else hi--;
+	           }
 	        }
 	    }
 	    return res;

@@ -14,16 +14,6 @@ import java.util.Stack;
  *
  */
 
-/*
-Previous correct implementation, O(h) space.
-Thoughts:http://blog.csdn.net/u014748614/article/details/46800891
-Put all left nodes into stack. Then top of stack must be the first element in in-order-traversal.
-We never add right node into stack directly, but ever time before returnning the rst node, we take care of rst.right right away.
-    That is, find next() when rst.right as root.
-very smart use of a 'currnt' node.
-It's like a pointer on the tree, but only operates when that current node is not null, and under condition of having left child.
-*/
-
 class TreeNode {
 	int val;
 	TreeNode left;

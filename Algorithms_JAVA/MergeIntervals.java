@@ -22,6 +22,16 @@ import java.util.List;
  *https://www.educative.io/collection/page/5642554087309312/5679846214598656/100003
  */
 
+/*
+ * Thoughts:
+ * 	1. sort the given intervals in ascending order
+ *  2. add the first interval to result
+ *  3. compare start of 2nd interval to end of first interval
+ *  		if 2nd interval is less -> can be merged with the first interval
+ *  			update max -> pick max of end intervals from 1st and 2nd
+ *  		if 2nd interval is more then add to result
+ * */
+
 class Interval {
 	int start;
 	int end;

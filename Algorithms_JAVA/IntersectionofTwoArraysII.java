@@ -80,7 +80,7 @@ public class IntersectionofTwoArraysII {
 		
 		int[] result = new int[tempResult.size()];
 		int k = 0;
-		for(Integer num : tempResult) {
+		for(Integer num : result) {
 			result[k++] = num;
 		}
 		return result;

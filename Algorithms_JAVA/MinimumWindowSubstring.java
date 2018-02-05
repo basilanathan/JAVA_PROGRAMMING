@@ -16,6 +16,56 @@ package fb.glassdoor;
  */
 
 public class MinimumWindowSubstring {
+	//solution 1 using hash map
+    public String minWindow(String s, String t) {
+        HashMap<Character,Integer> map = new HashMap();
+        for(char c : s.toCharArray())
+            map.put(c,0);
+        
+        // Statistic for count of char in t
+        for(char c : t.toCharArray())
+        {
+            if(map.containsKey(c))
+                map.put(c,map.get(c)+1);
+            else
+                return "";
+        }
+        // counter represents the number of chars of t to be found in s.
+        int start =0, end=0, minStart=0,minLen = Integer.MAX_VALUE, counter = t.length();
+        // Move end to find a valid window.
+        while(end < s.length())
+        {
+            // If char in s exists in t, decrease counter
+            char c1 = s.charAt(end);
+            if(map.get(c1) > 0)
+                counter--;
+            map.put(c1,map.get(c1)-1); //If char does not exist in t,  will be negative.
+
+            end++;
+            
+            //// When we found a valid window, move start to find smaller window.
+            while(counter == 0)
+            {
+                if(minLen > end-start)
+                {
+                    minLen = end-start;
+                    minStart = start;
+                }
+
+                // When char exists in t, increase counter.
+                char c2 = s.charAt(start);
+                map.put(c2, map.get(c2)+1);
+
+                if(map.get(c2) > 0)
+                    counter++;
+
+                start++;
+            }
+        }
+        return minLen == Integer.MAX_VALUE ? "" : s.substring(minStart,minStart+minLen);
+    }
+    
+    //solution 2
 	
 	  public String minWindow(String s, String t) {
 		    int [] map = new int[128];

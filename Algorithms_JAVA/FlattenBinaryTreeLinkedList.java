@@ -3,7 +3,7 @@ package fb.glassdoor;
 import java.util.Stack;
 
 /*
-Flatten Binary Tree to Linked List 
+Flatten Binary Tree to Linked List
 Flatten a binary tree to a fake "linked list" in pre-order traversal.
 Here we use the right pointer in TreeNode as the next pointer in ListNode.
 Example
@@ -38,55 +38,21 @@ Binary Tree Depth First Search
  *     }
  * }
  */
-
-/**
- * Move from root down,
- * for each node, 
- *  attach original right as the right child of the rigthmost node of left subtree,
- *  set original left as new right child.
- * repeat with next right child.
- */
 public class FlattenBinaryTreeLinkedList {
 	//Time: O(N) 
 	//space: O(1)
 	public void flatten(TreeNode root) {
-	    TreeNode node = root;
-	    while (node != null) {
-	        TreeNode left = node.left;
-	        TreeNode right = node.right;
-	        if (left != null) {
-	            TreeNode temp = left;
-	            while (temp.right != null)
-	                temp = temp.right;
-	            temp.right = right;
-	            node.right = left;
-	            node.left = null;
-	        }
-	        node = node.right;
-	    }
-	}
-	
-	//Solution 2
-	public void flattenRec(TreeNode root) {
-	    if (root == null)
-	        return;
-	    TreeNode left = root.left;
-	    TreeNode right = root.right;
-	    if (left != null) {
-	        TreeNode rightmost = getRightmost(left);
-	        rightmost.right = right;
-	        root.left = null; // CATCH: must set left to null explicitly
-	        root.right = left;
-	    }
-	    flatten(root.right);
-	}
-
-	// return the rightmost node of a subtree;
-	// node must not be null.
-	private TreeNode getRightmost(TreeNode node) {
-	    while (node.right != null)
-	        node = node.right;
-	    return node;
+		TreeNode cur = root;
+		while (cur != null) {
+			if (cur.left != null) {
+				TreeNode last = cur.left;
+				while (last.right != null) last = last.right;
+				last.right = cur.right;
+				cur.right = cur.left;
+				cur.left = null;
+			}
+			cur = cur.right;
+		}
 	}
 
 	

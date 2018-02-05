@@ -1,7 +1,11 @@
 package fb.glassdoor;
 
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
+import java.util.Set;
 
 /**
  * 
@@ -15,7 +19,7 @@ import java.util.List;
 
 
 public class RemoveInvalidParentheses {
-	
+	//)(
     //SOLUTION 1
     //Time: O(n), 2 pass
 	//Simple version: only output the first valid
@@ -146,18 +150,78 @@ public class RemoveInvalidParentheses {
         }
     }
     
+    public List<String> removeInvalidParentheses3(String s) {
+        
+        List<String> result = new ArrayList<>();
+        if (s == null)  return result;
+        Queue<String> queue = new LinkedList<>();
+        Set<String> visited = new HashSet<>(); // avoid duplicate results
+        queue.offer(s);
+        visited.add(s);
+        boolean foundValid = false;
+        while (!queue.isEmpty()) {
+          String r = queue.poll();
+          if (isValid(r)) {
+            result.add(r);
+            foundValid = true;
+      }
+      // found valid, no need to remove anymore, just iterate the rest of q and add to res when necessary
+      
+      if (foundValid)    continue; 
+      for (int i = 0; i < r.length(); i++) {
+          if(r.charAt(i) != '(' && r.charAt(i) != ')')  continue;
+          String temp = r.substring(0, i) + r.substring(i + 1);
+          if (visited.contains(temp))  continue;
+          visited.add(temp);
+          queue.offer(temp);
+      }
+    }
+    return result;
+  }
+
+  // Remember this method => Check that the brackets match
+
+      private boolean isValid(String s) {
+          
+          int count = 0; // stack variable
+          for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) == '(')    count++;
+            if (s.charAt(i) == ')' && count-- == 0)  return false;
+        }
+      return count == 0;
+  }
+    
     public static void main(String[] args) {
 		RemoveInvalidParentheses test = new RemoveInvalidParentheses();
 		
-		String string = "()())()";
-		String string2 = "(a)())()";
+		//String string = "()())()";
+		//String string2 = "(a)())()";
+
+		String string5 = "a(b)c)";
 		String string3 = "(((((";
 		String string4 = ")(";
+		String string6 = "(()()(";
+		String string7 = ")(())(";
+				
 
-		System.out.println(test.removeInvalidParentheses2(string));
-		System.out.println(test.removeInvalidParentheses2(string2));
+		
+		//System.out.println(test.removeInvalidParentheses2(string));
+		//System.out.println(test.removeInvalidParentheses2(string2));
+
+		System.out.println(test.removeInvalidParentheses2(string5));
 		System.out.println(test.removeInvalidParentheses2(string3));
 		System.out.println(test.removeInvalidParentheses2(string4));
+		System.out.println(test.removeInvalidParentheses2(string6));
+		System.out.println(test.removeInvalidParentheses2(string7));
+		
+		System.out.println(test.removeInvalidParentheses3(string5));
+		System.out.println(test.removeInvalidParentheses3(string3));
+		System.out.println(test.removeInvalidParentheses3(string4));
+		System.out.println(test.removeInvalidParentheses3(string6));
+		System.out.println(test.removeInvalidParentheses3(string7));
+
+
+
 
 		
 	}

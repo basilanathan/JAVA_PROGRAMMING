@@ -62,10 +62,8 @@ public class MeetingRoomsII {
         endTimes.offer(intervals[0].end);
         for(int i = 1; i < intervals.length; i++) {
 
-        	// If the start time of the current time period is greater than the earliest end time, 
-        	//the earliest end time can be updated as the end time of the current time period, 
-        	//and if it is less than, a new end time is added to indicate the new room
-        		if(intervals[i].start >= endTimes.peek()) { //can use the same room
+        	// If the start time of the current time period is greater than the earliest end time, the earliest end time can be updated as the end time of the current time period, and if it is less than, a new end time is added to indicate the new room
+        		if(intervals[i].start >= endTimes.peek()) {
         			endTimes.poll(); //earliest end time being updated
         		}
         		endTimes.offer(intervals[i].end); //adding the new room
