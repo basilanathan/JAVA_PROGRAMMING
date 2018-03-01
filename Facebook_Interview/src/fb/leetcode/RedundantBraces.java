@@ -29,7 +29,7 @@ public class RedundantBraces {
 	
 	public static void main(String[] args) {
 		RedundantBraces test = new RedundantBraces();
-		String teString = "((a + b))";
+		String teString = "((a + b)))";
 		System.out.println(test.braces(teString));
 	}
 

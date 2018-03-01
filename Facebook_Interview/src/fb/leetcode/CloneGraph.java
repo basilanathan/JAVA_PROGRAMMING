@@ -41,14 +41,16 @@ class UndirectedGraphNode {
 public class CloneGraph {
 	//SOLUTION 1
 	public HashMap<Integer, UndirectedGraphNode> map = new HashMap();
+	
 	public UndirectedGraphNode cloneGraph(UndirectedGraphNode node) {
 	    if (node == null) return null;
 	    if (map.containsKey(node.label)) 
 	        return map.get(node.label);
-	    UndirectedGraphNode cloned = new UndirectedGraphNode(node.label);
-	    map.put(cloned.label, cloned);
-	    for(UndirectedGraphNode neighbor: node.neighbors){
-	        cloned.neighbors.add(cloneGraph(neighbor));
+	    
+	    UndirectedGraphNode cloned = new UndirectedGraphNode(node.label); //cloning the node
+	    map.put(cloned.label, cloned); //put in map as clones
+	    for(UndirectedGraphNode neighbor: node.neighbors){ //get the neighbors from the old graph
+	        cloned.neighbors.add(cloneGraph(neighbor)); //add it to the cloned node after cloning the neighbor
 	    }
 	    return cloned;
 	}

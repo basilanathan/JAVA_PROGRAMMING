@@ -34,7 +34,7 @@ public class MoveZeroesFront {
 	}
 	
 	public static void main(String[] args) {
-		int [] myArray = moveZeroesFront(new int[] {0, 1, 0, 3, 12});
+		int [] myArray = moveZeroesFront(new int[] {2, 1, 0, 3, 12});
 			for (int i = 0; i < myArray.length; i++) {
 				System.out.print(myArray[i] + " ");
 			

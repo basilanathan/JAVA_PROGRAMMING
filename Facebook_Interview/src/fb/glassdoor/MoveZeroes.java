@@ -101,7 +101,7 @@ public class MoveZeroes {
 	
 	public static void main(String[] args) {
 		
-		int [] myArray = moveZeroes(new int[] {0, 1, 0, 3, 12});
+		int [] myArray = moveZeroes(new int[] {0, 1, 0, 3, 12}); //1 3 12
 			for (int i = 0; i < myArray.length; i++) {
 				System.out.println(myArray[i]);
 			

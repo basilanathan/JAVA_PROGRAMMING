@@ -45,6 +45,30 @@ public class ConvertBSTSortedDoublyLinkedList {
 	    return a;
 	}
 	
+	Solution 2: iteration
+	O(n) time, O(h) space
+
+	public TreeNode bstToDoublyList(TreeNode root) {  
+	    TreeNode head = null, prev = null;
+	    Stack<TreeNode> stack = new Stack<>();
+	    while (root != null || !stack.empty()) {
+	        while (root != null) {
+	            stack.push(root);
+	            root = root.left;
+	        }
+	        root = stack.pop();
+	        root.left = prev;
+	        if (prev != null)	prev.right = root;
+	        else 	head = root;
+	        TreeNode right = root.right;
+	        head.left = root;
+	        root.right = head;//remember to update the prev !!!
+	        prev = root;
+	        root = right;//we should root=root.right even if it's null!!!
+	    }
+	    return head;
+	}
+	
 	//solution 2
 	private TreeNode prev;  
 	private TreeNode head;  

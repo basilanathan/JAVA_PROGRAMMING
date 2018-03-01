@@ -36,40 +36,38 @@ public class AddAndSearchWord {
 		public boolean isWord;
 	}
 	
-	private TrieNode root = new TrieNode();
-	
-	public void addWord(String word) {
-		TrieNode node = root;
-		
-		for(char c : word.toCharArray()) {
-			if(node.children[c -'a'] == null) {
-				node.children[c - 'a'] = new TrieNode();
-			}
-			
-			node = node.children[c - 'a'];
-		}
-		node.isWord = true;
-	}
-	
-	public boolean search(String word) {
-		return match(word.toCharArray(), 0, root);
-	}
+TrieNode root = new TrieNode();
+    
+    // Adds a word into the data structure.
+    public void addWord(String word) {
+        TrieNode node = root;
+        for (int i = 0; i < word.length(); i++) {
+            char c = word.charAt(i);
+            if (node.children[c-'a'] == null) {
+                node.children[c-'a'] = new TrieNode();
+            }
+            node = node.children[c-'a'];
+        }
+        node.isWord = true;
+    }
 
-	private boolean match(char[] chs, int k, TrieNode node) {
-		if(k == chs.length) {
-			return node.isWord;
-		}
-		
-		if (chs[k] == '.') {
-			for(int i = 0; i < node.children.length; i++) {
-				if (node.children[i] != null && match(chs, k + 1, node.children[i])) {
-					return true;
-				}
-			}
-		} else {
-			return node.children[chs[k] - 'a'] != null && match(chs, k + 1, node.children[chs[k] - 'a']);
-		}
-		return false;
-	}
+    // Returns if the word is in the data structure. A word could
+    // contain the dot character '.' to represent any one letter.
+    public boolean search(String word) {
+        return match(word, 0, root);
+    }
+    
+    private boolean match(String word, int step, TrieNode node) {
+        if (word.length() == step) return node.isWord;
+        char c = word.charAt(step);
+        if (c != '.') {
+            return node.children[c-'a'] != null && match(word, step+1, node.children[c-'a']);
+        } else {
+            for (int i = 0; i < 26; i++) {
+                if (node.children[i] != null && match(word, step+1, node.children[i])) return true;
+            }
+            return false;
+        }
+    }
 
 }
