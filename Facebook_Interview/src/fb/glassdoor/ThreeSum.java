@@ -140,14 +140,50 @@ public class ThreeSum {
 //		return result;
 //	}
 	
+    public static List<List<Integer>> threeTarget(int[] a, int target){
+        List<List<Integer>> result = new ArrayList<>();
+        Arrays.sort(a);
+        int l,r;
+        for (int i = 0; i < a.length-2; i++){
+            l = i + 1;
+            r = a.length - 1;
+            while (l < r){
+                if (a[i] + a[l] + a[r] == target ){
+                    result.add((Arrays.asList(a[i], a[l], a[r])));
+                    l++;
+                }
+                else if (a[i] + a[l] + a[r] < target){
+                    l++;
+                }
+                else{
+                    r--;
+                }
+            }
+        }
+
+        return result;
+    }
+	
 	public static void main(String[] args) {
-		int[] nums = {-1, 0, 1, 2, -1, -4};
+		
+        int[] a = {-3, 0, 2, 5, 3, 8};
+        List<List<Integer>> threes;
+        //triplets=sumOfThreeNaive(a, 13);
+        threes = threeTarget(a,10);
+        for (List<Integer> list : threes){
+            for (int triplet: list){
+                System.out.print(triplet+" ");
+            }
+            System.out.println();
+        }
+		
+		//int[] nums = {-1, 0, 1, 2, -1, -4};
 		//int[] nums = {-1,-1,0,1,2};
 		//int[] nums = {1, 2, 3, 4, 5, 6, 7, 8, 9, -2, -8, -5, -9, -4, -1};
 
 		
-		System.out.println("Brute Force numbers add up to 0 " +threeSum(nums));
+		//System.out.println("Brute Force numbers add up to 0 " +threeSum(nums));
 		//System.out.println("Optimized numbers add up to 8 " + threeSumOptimized(nums));
-		System.out.println("Optimized numbers add up to 0 " + threeSumOptimized2(nums));
+		//System.out.println("Optimized numbers add up to 0 " + threeSumOptimized2(nums));
 	}
 }

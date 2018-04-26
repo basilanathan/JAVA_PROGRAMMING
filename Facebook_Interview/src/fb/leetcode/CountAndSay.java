@@ -23,8 +23,9 @@ package fb.leetcode;
 	
 	Input: 1
 	Output: "1"
-	Example 2:
 	
+	Example 2:
+
 	Input: 4
 	Output: "1211"
 	
@@ -49,6 +50,7 @@ public class CountAndSay {
 		char c = result.charAt(0); //2
 		int count = 1;
 		
+		//first time doesn't go through loop
 		for(int i = 1; i < result.length(); i++) {
 			if(result.charAt(i) == c) count++;
 			

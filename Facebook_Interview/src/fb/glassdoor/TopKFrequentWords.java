@@ -1,6 +1,6 @@
 package fb.glassdoor;
 
-import java.util.ArrayList;
+import java.util.ArrayList;	
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -10,7 +10,7 @@ import java.util.PriorityQueue;
 
 /**
  * 
- * @author basila
+ * @author basila	
  * 
  * Given a non-empty list of words, return the k most frequent elements.
 

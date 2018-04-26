@@ -73,5 +73,30 @@ public class FindTheCelebrity extends Relation {
         }  
         return c;  
     }  
+    
+    //QUEUE SOLUTION REPEAT
+    public int findCelebrityRepeat(int[] persons ) {
+    		Queue<Integer> celebrityQueue = new LinkedList<>();
+    		for(int p : persons) {
+    			celebrityQueue.add(p);
+    		}
+    		
+    		while(celebrityQueue.size() > 1) {
+    			int a = celebrityQueue.poll();
+    			int b = celebrityQueue.poll();
+    			if(hasAcquiantance(a, b)) {
+    				celebrityQueue.offer(b);
+    			} else {
+    				celebrityQueue.offer(a);
+    			}
+    		}
+    		int celebrity = celebrityQueue.poll();
+    		for(int p : persons) {
+    			if (p == celebrity) continue;
+    			if(hasAcquiantance(celebrity, p) || !hasAcquiantance(p, celebrity))
+    					return -1;
+    		}
+    		return celebrity;
+    }
 
 }
